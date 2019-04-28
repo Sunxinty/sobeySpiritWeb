@@ -1,0 +1,90 @@
+@import url("base.css");
+.item-list {
+	text-align: center;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	-webkit-animation: itemIndex 3s ease;
+	-moz-animation: itemIndex 3s ease;
+	animation: itemIndex 3s ease;
+}
+
+@-webkit-keyframes itemIndex {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes itemIndex {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes itemIndex {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.item-list>div {
+	width: 3.08rem;
+	height: 3.08rem;
+	margin: 0 0.2rem;
+	opacity: 0.9;
+	position: relative;
+	cursor: pointer;
+	-moz-transition: 0.5s ease;
+	-webkit-transition: 0.5s ease;
+	transition: 0.5s ease;
+	margin-top: -1.5rem;
+}
+
+.item-list>div:nth-of-type(1) {
+	background: url(../imgs/icon01.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.item-list>div:nth-of-type(2) {
+	background: url(../imgs/icon02.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.item-list>div:nth-of-type(3) {
+	background: url(../imgs/icon03.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.item-list>div:nth-of-type(4) {
+	background: url(../imgs/icon04.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.item-list>div:hover {
+	-moz-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+	opacity: 1;
+}
+
+.item-list p {
+	font-size: 20px;
+	line-height: 0.57rem;
+	font-weight: 600;
+	bottom: 0.15rem;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	left: 0;
+}

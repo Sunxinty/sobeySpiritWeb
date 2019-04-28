@@ -1,0 +1,33 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>索贝精灵-输入注册码</title>
+		<link rel="stylesheet" href="static/lib/bootstrap.min.css" />
+		<link rel="stylesheet" href="static/css/login.css" />
+	</head>
+
+	<body>
+		<header class="section"></header>
+		<section class="section" id="container">
+			<div class="section login-box">
+				<div class="section login-form">
+					<p>请输入产品注册码</p>
+					<input type="text" ref="input" autofocus="autofocus" placeholder="请输入产品激活码" v-model="codeText" />
+					<span :class="{error:isVerify==0}">{{verifyText}}</span>
+					<div class="section login-btn">
+						<a href="##" class="sure-btn" @click="loginBtn">确认</a>
+						<a href="##" class="cancel-btn" @click="cancelBtn">取消</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script type="text/javascript" src="static/lib/jquery-3.2.0.min.js"></script>
+		<script type="text/javascript" src="static/lib/vue.min.js"></script>
+		<script type="text/javascript" src="static/lib/vue-resource.js"></script>
+		<script type="text/javascript" src="static/js/myTools.js"></script>
+		<script type="text/javascript" src="static/js/login.js"></script>
+	</body>
+
+</html>
