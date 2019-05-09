@@ -1,13 +1,14 @@
 @import url("base.css");
 .login-box {
-	width: 7.01rem;
-	height: 3.76rem;
+	width: 5.63rem;
+	height: 3.74rem;
 	background: url(../imgs/login_bg.png) no-repeat;
 	background-size: 100% 100%;
 	top: 2.05rem;
 	-webkit-animation: login 2s ease;
 	-moz-animation: login 2s ease;
 	animation: login 2s ease;
+	box-shadow: 0 0 0.3rem #000000;
 }
 
 @keyframes login {
@@ -55,14 +56,38 @@
 	}
 }
 
-.login-form {
-	padding: 0.9rem 0.75rem 0 0.75rem;
+.login-box h3 {
+	text-align: center;
+	font-size: 0.22rem;
+	color: #ccc;
+	margin-top: 0.4rem;
 }
 
-.login-form p {
+.login-form {
+	padding: 0.3rem 0.9rem 0;
+}
+
+.login-form label {
+	width: 100%;
+	position: relative;
 	float: left;
-	line-height: 0.5rem;
-	margin-right: 0.3rem;
+	margin-bottom: 0.15rem;
+}
+
+.login-form label span{
+	position: absolute;
+	top: 0.15rem;
+	left: 0.15rem;
+	width: 0.16rem;
+	height: 0.16rem;
+	background: url(../imgs/icon/user.png) no-repeat;
+	background-size: 100% auto;
+}
+
+.login-form label:nth-of-type(2) span{
+	height: 18px;
+	background: url(../imgs/icon/psw.png) no-repeat;
+	background-size: 100% auto;
 }
 
 .login-form input {
@@ -70,46 +95,41 @@
 	height: 0.5rem;
 	background: #212121;
 	float: left;
-	width: 3.8rem;
-	padding: 0 0.2rem;
+	width: 100%;
+	padding: 0 0.2rem 0 0.4rem;
 }
 
-.login-form span {
-	color: #53A6FD;
+.login-form>span {
+	color: #CD374B;
 	font-size: 14px;
 	width: 100%;
 	line-height: 0.24rem;
-	margin: 0.2rem 0 0.4rem 1.6rem;
 	float: left;
 	height: 0.24rem;
 }
 
-.login-form span.error {
-	color: #CD374B;
+.login-form span.success {
+	color: #53A6FD;
 }
 
 .login-form .login-btn {
 	text-align: center;
+	margin-top: 0.2rem;
+	float: left;
 }
 
 .login-form .login-btn a {
-	width: 1.18rem;
-	height: 0.46rem;
-	line-height: 0.46rem;
-	background: rgba(84, 84, 84, 1);
+	width: 100%;
+	height: 0.5rem;
+	line-height: 0.5rem;
+	background: #2A91FF;
 	border-radius: 4px;
-	margin: 0 0.2rem;
-	color: #A3A3A3;
-	opacity: 0.9;
+	color: #fff;
+	opacity: 0.8;
 	-moz-transition: 0.3s ease;
 	-webkit-transition: 0.3s ease;
 	transition: 0.3s ease;
-}
-
-.login-form .login-btn a.sure-btn {
-	color: #fff;
-	background: url(../imgs/icon_bg.png) no-repeat;
-	background-position: -367px -76px;
+	font-size: 0.16rem;
 }
 
 .login-form .login-btn a:hover {

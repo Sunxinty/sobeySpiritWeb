@@ -60,10 +60,34 @@ window.myTools = {
 			$("html").css("font-size", fontSize);
 		}
 	},
+	/**/
+	alertCustom(msg) {
+		$("body").append('<div class="alert-custom">' + msg + '</div>');
+		$(".alert-custom").css({
+			"position": "absolute",
+			"width": "2rem",
+			"height": "0.6rem",
+			"top": "20%",
+			"left": "50%",
+			"margin-left": "-1rem",
+			"background": "rgba(115, 214, 230,0.6)",
+			"border-radius": "8px",
+			"text-align": "center",
+			"line-height": "0.6rem",
+			"animation": "alertCustom 3s ease",
+			"opacity": "0",
+			"z-index": "9999999",
+			"color": "#fff",
+			"font-size": "16px"
+		});
+		setTimeout(function() {
+			$("body").find(".alert-custom").eq(0).remove();
+		}, 3000)
+	}
 }
 
 window.myTools.selfAdaption()
 
-window.onresize = function(){
+window.onresize = function() {
 	window.myTools.selfAdaption()
 }

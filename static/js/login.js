@@ -1,10 +1,11 @@
 var loginVue = new Vue({
 	el: "#container",
 	data: {
-		codeText: "",
 		isVerify: 2, //验证是否成功0-否，1-是，2-未验证
 		verifyText: "", //验证提示信息
 		isLogin: false, //是否登录
+		loginName:"",
+		loginPass:"",
 	},
 	mounted: function() {
 		var _this = this;
@@ -20,10 +21,12 @@ var loginVue = new Vue({
 			var _this = this;
 			switch(vaule) {
 				case 0:
-					_this.verifyText = "激活码输入有误，请重新输入！";
+					_this.verifyText = "账号或密码有误！";
+					myTools.alertCustom(_this.verifyText)
 					break;
 				case 1:
-					_this.verifyText = "激活码验证成功！";
+					_this.verifyText = "登录成功！即将进入";
+					myTools.alertCustom(_this.verifyText)
 					break;
 				case 2:
 					_this.verifyText = "";
@@ -32,7 +35,8 @@ var loginVue = new Vue({
 		},
 		/*初始化状态*/
 		initStatus() {
-			this.codeText = "";
+			this.loginName = "";
+			this.loginPass = "";
 			this.isVerify = 2;
 			this.verifyText = "";
 			this.$refs['input'].focus()
@@ -40,11 +44,22 @@ var loginVue = new Vue({
 		/*登录*/
 		loginBtn() {
 			var _this = this;
-			if(_this.codeText == "") {
-				_this.verifyText = "请输入产品激活码"
+			if(_this.loginName == "") {
+				_this.verifyText = "请输入登录账号!";
+				myTools.alertCustom(_this.verifyText)
+				_this.$refs['input'].focus()
 				return;
 			}
-			window.location.href = "index.html"
+			else if(_this.loginPass == ""){
+				_this.verifyText = "请输入密码!";
+				myTools.alertCustom(_this.verifyText)
+				_this.$refs['password'].focus()
+				return;
+			}
+			_this.isVerify = 1;
+			setTimeout(function(){
+				window.location.href = "index.html"
+			},1000)
 		},
 		/*取消*/
 		cancelBtn() {

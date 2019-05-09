@@ -3,20 +3,20 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>索贝精灵</title>
+		<title>索贝精灵-首页</title>
 		<link rel="stylesheet" href="static/lib/bootstrap.min.css" />
 		<link rel="stylesheet" href="static/css/index.css" />
 	</head>
 
 	<body>
-		<header class="section"></header>
-		<section class="section" id="container">
+		<div class="section header"></div>
+		<div class="section" id="container">
 			<div class="section item-list">
 				<div v-for="item in urlList" @click="openUrl(item.url)" :title="item.name">
 					<p>{{item.name}}</p>
 				</div>
 			</div>
-		</section>
+		</div>
 		<script type="text/javascript" src="static/lib/jquery-3.2.0.min.js"></script>
 		<script type="text/javascript" src="static/lib/vue.min.js"></script>
 		<script type="text/javascript" src="static/js/myTools.js"></script>

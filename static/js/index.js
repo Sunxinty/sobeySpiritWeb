@@ -3,7 +3,7 @@ var indexVue = new Vue({
 	data: {
 		urlList: [{
 				name: "图片处理",
-				url: ""
+				url: "picHandle.html"
 			},
 			{
 				name: "文件处理",
