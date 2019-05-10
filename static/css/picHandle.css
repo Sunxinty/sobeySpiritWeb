@@ -182,3 +182,8 @@ body {
 .operate-box a:hover {
 	transform: scale(0.99);
 }
+
+.pic-handle{
+	padding: 0.2rem 0;
+	text-align: center;
+}
