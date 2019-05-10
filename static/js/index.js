@@ -7,11 +7,11 @@ var indexVue = new Vue({
 			},
 			{
 				name: "文件处理",
-				url: ""
+				url: "videoHandle.html"
 			},
 			{
 				name: "信号处理",
-				url: ""
+				url: "urlHandle.html"
 			},
 			{
 				name: "任务列表",

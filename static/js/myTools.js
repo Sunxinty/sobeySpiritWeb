@@ -47,18 +47,20 @@ window.myTools = {
 	selfAdaption() {
 		var winWidth = $(window).width();
 		var fontSize;
-		if(winWidth < 1920) {
-			if(winWidth < 1200) {
-				fontSize = 1200 / 19.2 + "px";
-				$("html").css("font-size", fontSize);
-			} else {
-				fontSize = winWidth / 19.2 + "px";
-				$("html").css("font-size", fontSize);
-			}
-		} else {
-			fontSize = 100 + "px";
-			$("html").css("font-size", fontSize);
-		}
+		fontSize = winWidth / 19.2 + "px";
+		$("html").css("font-size", fontSize);
+//		if(winWidth < 1920) {
+//			if(winWidth < 1200) {
+//				fontSize = 1200 / 19.2 + "px";
+//				$("html").css("font-size", fontSize);
+//			} else {
+//				fontSize = winWidth / 19.2 + "px";
+//				$("html").css("font-size", fontSize);
+//			}
+//		} else {
+//			fontSize = 100 + "px";
+//			$("html").css("font-size", fontSize);
+//		}
 	},
 	/**/
 	alertCustom(msg) {

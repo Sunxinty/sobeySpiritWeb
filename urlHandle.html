@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>索贝精灵-图片处理</title>
+		<title>索贝精灵-信号处理</title>
 		<link rel="stylesheet" href="static/lib/bootstrap.min.css" />
-		<link rel="stylesheet" href="static/css/picHandle.css" />
+		<link rel="stylesheet" href="static/css/urlHandle.css" />
 	</head>
 
 	<body>
@@ -13,16 +13,16 @@
 		<div class="section" id="container">
 			<div class="section left nav-list">
 				<ul class="section">
-					<li class="active">
-						<img src="static/imgs/icon/icon19.png" />
+					<li @click="openUrl('picHandle.html')">
+						<img src="static/imgs/icon/icon20.png" />
 						<p>图片处理</p>
 					</li>
 					<li @click="openUrl('videoHandle.html')">
 						<img src="static/imgs/icon/icon25.png" />
 						<p>文件处理</p>
 					</li>
-					<li @click="openUrl('urlHandle.html')">
-						<img src="static/imgs/icon/icon24.png" />
+					<li class="active">
+						<img src="static/imgs/icon/icon22.png" />
 						<p>信号处理</p>
 					</li>
 					<li @click="openUrl()">
@@ -30,18 +30,19 @@
 						<p>任务列表</p>
 					</li>
 				</ul>
-				<div class="add-file" id="uploadFile">
-					+
-					<p>添加图片</p>
-				</div>
 			</div>
 			<div class="section left content">
 				<div class="section edit-box">
-					<div class="section edit-title">编辑窗口</div>
+					<div class="section sucai-box">
+						<div class="section edit-title">信号输入</div>
+					</div>
+					<div class="section yulan-box">
+						<div class="section edit-title">信号输出</div>
+					</div>
 				</div>
 				<div class="section tool-box">
 					<div class="section edit-title">
-						图片处理项
+						信号处理项
 					</div>
 					<div class="section edit-item">
 						<ul class="section">
@@ -49,17 +50,13 @@
 								<img src="static/imgs/icon/icon4.png" />
 								<p>图片修复</p>
 							</li>
-							<li :class="{active:retread}" @click="switchRepair(1)">
-								<img src="static/imgs/icon/icon4.png" />
-								<p>图片翻新</p>
-							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="section right operate-detail">
 				<div class="section detail-box">
-					<h3>图片详情</h3>
+					
 				</div>
 				<div class="section operate-box text-center">
 					<a href="##">保存</a>
@@ -69,7 +66,7 @@
 		<script type="text/javascript" src="static/lib/jquery-3.2.0.min.js"></script>
 		<script type="text/javascript" src="static/lib/vue.min.js"></script>
 		<script type="text/javascript" src="static/js/myTools.js"></script>
-		<script type="text/javascript" src="static/js/picHandle.js"></script>
+		<script type="text/javascript" src="static/js/urlHandle.js"></script>
 	</body>
 
 </html>
