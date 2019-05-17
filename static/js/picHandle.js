@@ -2,7 +2,8 @@ var picVue = new Vue({
 	el:"#container",
 	data:{
 		repair: false,
-		retread:false
+		retread:false,
+		imgMsg:null,//图片信息
 	},
 	mounted:function(){
 		
