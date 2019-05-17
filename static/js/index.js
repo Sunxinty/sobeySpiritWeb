@@ -19,7 +19,9 @@ var indexVue = new Vue({
 			}
 		]
 	},
-	mounted: function() {},
+	mounted: function() {
+		
+	},
 	methods: {
 		openUrl(url) {
 			if(!url || url == "") {

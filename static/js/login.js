@@ -4,13 +4,13 @@ var loginVue = new Vue({
 		isVerify: 2, //验证是否成功0-否，1-是，2-未验证
 		verifyText: "", //验证提示信息
 		isLogin: false, //是否登录
-		loginName:"",
-		loginPass:"",
+		userName: "",
+		userPsd: "",
 	},
 	mounted: function() {
 		var _this = this;
-		//自动获取焦点
-		_this.$refs['input'].focus()
+		window.localStorage.setItem("userToken", "")
+		_this.initStatus()
 	},
 	watch: {
 		isVerify: 'watchVerifyText'
@@ -22,11 +22,9 @@ var loginVue = new Vue({
 			switch(vaule) {
 				case 0:
 					_this.verifyText = "账号或密码有误！";
-					myTools.alertCustom(_this.verifyText)
 					break;
 				case 1:
 					_this.verifyText = "登录成功！即将进入";
-					myTools.alertCustom(_this.verifyText)
 					break;
 				case 2:
 					_this.verifyText = "";
@@ -35,8 +33,8 @@ var loginVue = new Vue({
 		},
 		/*初始化状态*/
 		initStatus() {
-			this.loginName = "";
-			this.loginPass = "";
+			this.userName = "";
+			this.userPsd = "";
 			this.isVerify = 2;
 			this.verifyText = "";
 			this.$refs['input'].focus()
@@ -44,28 +42,38 @@ var loginVue = new Vue({
 		/*登录*/
 		loginBtn() {
 			var _this = this;
-			if(_this.loginName == "") {
+			if(_this.userName == "") {
 				_this.verifyText = "请输入登录账号!";
-				myTools.alertCustom(_this.verifyText)
 				_this.$refs['input'].focus()
 				return;
-			}
-			else if(_this.loginPass == ""){
+			} else if(_this.userPsd == "") {
 				_this.verifyText = "请输入密码!";
-				myTools.alertCustom(_this.verifyText)
 				_this.$refs['password'].focus()
 				return;
 			}
-			_this.isVerify = 1;
-			setTimeout(function(){
-				window.location.href = "index.html"
-			},1000)
-		},
-		/*取消*/
-		cancelBtn() {
-			this.initStatus();
-			var _this = this;
-
+			let parmas = {
+				loginName: _this.userName,
+				passWord: _this.userPsd
+			}
+			_this.$http.post(Request.http + "v1/api/user/login", JSON.stringify(parmas))
+				.then(function(res) {
+					if(res.data.ResponseMessage.status == "success") {
+						_this.isVerify = 1;
+						var userToken = res.data.data.token;
+						window.localStorage.setItem("userToken", userToken)
+						setTimeout(function() {
+							window.location.href = "index.html"
+						}, 500)
+					} else {
+						_this.isVerify = 0;
+						window.localStorage.setItem("userToken", "")
+						_this.verifyText = res.data.ResponseMessage.message.zh_CN
+					}
+				}, function() {
+					_this.isVerify = 0;
+					window.localStorage.setItem("userToken", "")
+					_this.verifyText = "服务器出错！"
+				})
 		},
 	}
 })

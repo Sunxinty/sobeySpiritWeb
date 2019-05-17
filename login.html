@@ -16,11 +16,11 @@
 				<div class="section login-form">
 					<label>
 						<span></span>
-						<input type="text" ref="input" autofocus="autofocus" placeholder="请输入登录账号" v-model="loginName" />
+						<input type="text" ref="input" autofocus="autofocus" placeholder="请输入登录账号" v-model="userName" />
 					</label>
 					<label>
 						<span></span>
-						<input type="password" ref="password" placeholder="请输入密码" v-model="loginPass" />
+						<input type="password" ref="password" placeholder="请输入密码" v-model="userPsd" />
 					</label>
 					<span :class="{success:isVerify==1}">{{verifyText}}</span>
 					<div class="section login-btn">
@@ -32,7 +32,7 @@
 		<script type="text/javascript" src="static/lib/jquery-3.2.0.min.js"></script>
 		<script type="text/javascript" src="static/lib/vue.min.js"></script>
 		<script type="text/javascript" src="static/lib/vue-resource.js"></script>
-		<script type="text/javascript" src="static/js/myTools.js"></script>
+		<script type="text/javascript" src="static/js/config.js" ></script>
 		<script type="text/javascript" src="static/js/login.js"></script>
 	</body>
 

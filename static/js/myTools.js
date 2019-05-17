@@ -9,18 +9,18 @@ window.myTools = {
 		if(!element) {
 			return;
 		}
-		var content = document.getElementById(element);
+		let content = document.getElementById(element);
 		content.onmousedown = function(e) {
 			//只允许一个框
-			var moveDiv = document.getElementById("tempDiv");
+			let moveDiv = document.getElementById("tempDiv");
 			if(moveDiv) {
 				moveDiv.remove()
 			}
-			var posx = e.clientX;
-			var posy = e.clientY;
-			var conPosx = content.offsetLeft;
-			var conPosy = content.offsetTop;
-			var div = document.createElement("div");
+			let posx = e.clientX;
+			let posy = e.clientY;
+			let conPosx = content.offsetLeft;
+			let conPosy = content.offsetTop;
+			let div = document.createElement("div");
 			div.id = "tempDiv";
 			div.style.left = (posx - conPosx) + "px";
 			div.style.top = (posy - conPosy) + "px";
@@ -45,24 +45,12 @@ window.myTools = {
 	 * 设置页面自适应
 	 * */
 	selfAdaption() {
-		var winWidth = $(window).width();
-		var fontSize;
+		let winWidth = $(window).width();
+		let fontSize;
 		fontSize = winWidth / 19.2 + "px";
 		$("html").css("font-size", fontSize);
-//		if(winWidth < 1920) {
-//			if(winWidth < 1200) {
-//				fontSize = 1200 / 19.2 + "px";
-//				$("html").css("font-size", fontSize);
-//			} else {
-//				fontSize = winWidth / 19.2 + "px";
-//				$("html").css("font-size", fontSize);
-//			}
-//		} else {
-//			fontSize = 100 + "px";
-//			$("html").css("font-size", fontSize);
-//		}
 	},
-	/**/
+	/*自定义弹窗*/
 	alertCustom(msg) {
 		$("body").append('<div class="alert-custom">' + msg + '</div>');
 		$(".alert-custom").css({
@@ -85,10 +73,23 @@ window.myTools = {
 		setTimeout(function() {
 			$("body").find(".alert-custom").eq(0).remove();
 		}, 3000)
-	}
+	},
+	/*判断是否登录*/
+	isLogin(){
+		let userToken = window.localStorage.getItem("userToken");
+		if(!userToken||userToken==""){
+			layer.msg("请登录！")
+			setTimeout(function(){
+				window.location.href = "login.html";
+			},1000)
+		}
+	},
 }
 
-window.myTools.selfAdaption()
+window.onload = function(){
+	window.myTools.selfAdaption()
+	window.myTools.isLogin()
+}
 
 window.onresize = function() {
 	window.myTools.selfAdaption()
