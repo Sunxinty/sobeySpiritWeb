@@ -194,3 +194,44 @@ body {
 	max-height: 100%;
 	max-width: 100%;
 }
+
+#modelWaitting {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 50px #000 inset;
+	display: none;
+}
+
+#modelWaitting .progress-box {
+	width: 30%;
+	height: 0.4rem;
+	border-radius: 0.2rem;
+	position: absolute;
+	left: 50%;
+	margin-left: -15%;
+	background: #7f8e94;
+	top: 40%;
+}
+#modelWaitting .progress-box span{
+	color: #fff;
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	line-height: 0.4rem;
+	text-align: center;
+}
+#modelWaitting .progress-box p {
+	width: 0%;
+	border-radius: 0.2rem;
+	position: absolute;
+	height: 0.4rem;
+	top: 0;
+	left: 0;
+	background: #22c7ec;
+}

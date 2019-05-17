@@ -4,29 +4,25 @@ body {
 }
 
 .header {
-	margin-bottom: 0.05rem;
-}
-
-#container {
-	height: 93%;
+	margin-bottom: 0.2%;
 }
 
 .nav-list {
-	width: 0.94rem;
+	width: 4.9%;
 	height: 100%;
 	background: #232425;
 }
 
 .operate-detail {
-	width: 2.3rem;
-	margin-right: 0.05rem;
+	width: 12%;
+	margin-right: 0.5%;
 	background: #232425;
 	height: 100%;
 }
 
 .content {
-	width: 15.8rem;
-	margin: 0 0.05rem;
+	width: 82%;
+	margin: 0 0.3%;
 }
 
 .nav-list li {
@@ -96,12 +92,12 @@ body {
 }
 
 .edit-box {
-	height: 5.98rem;
+	height: 68%;
 	border-bottom: 0.05rem;
 }
 
 .tool-box {
-	height: 3.95rem;
+	height: 32%;
 	background: #232425;
 }
 
@@ -115,13 +111,13 @@ body {
 }
 
 .detail-box {
-	height: 5.98rem;
+	height: 68%;
 	border-bottom: 0.05rem solid #18191A;
 	padding: 0.1rem;
 }
 
 .operate-box {
-	height: 3.95rem;
+	height: 32%;
 }
 
 .edit-item {
@@ -150,9 +146,10 @@ body {
 
 .edit-item li p {
 	font-size: 0.14rem;
-	color: #555555;
+	color: #999;
 	width: 100%;
 	transition: 0.3s ease;
+	float: left;
 }
 
 .edit-item li.active p {
@@ -170,7 +167,7 @@ body {
 	height: 1.28rem;
 	background: url(../imgs/icon/icon33.png) no-repeat;
 	background-size: 100% 100%;
-	margin-top: 1.2rem;
+	margin-top: 0.7rem;
 	color: #fff;
 	font-size: 0.24rem;
 	line-height: 1.28rem;
